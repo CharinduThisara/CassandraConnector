@@ -32,10 +32,10 @@ public class CassandraConnector {
     private String createKeyspaceQuery = "CREATE KEYSPACE IF NOT EXISTS my_keyspace "
             + "WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};";
 
-    private String createTableQuery = "CREATE TABLE IF NOT EXISTS my_keyspace.users ("
-            + "user_id UUID PRIMARY KEY, "
+            String createTableQuery = "CREATE TABLE IF NOT EXISTS my_keyspace.users ("
+            + "user_id TEXT PRIMARY KEY, "
             + "username TEXT, "
-            + "credential BLOB, "
+            + "credential TEXT, "
             + "role_list SET<TEXT>, "
             + "claims MAP<TEXT, TEXT>, "
             + "profile TEXT)";

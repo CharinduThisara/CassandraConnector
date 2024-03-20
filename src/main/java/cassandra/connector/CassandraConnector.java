@@ -98,6 +98,7 @@ public class CassandraConnector {
         CassandraConnector connector = new CassandraConnector();
         try {
             connector.connectCosmos();
+            System.out.println("Connected to Cassandra");
         }
         catch (DriverException e) {
             System.out.println("Error connecting to Cassandra");

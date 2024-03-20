@@ -70,8 +70,10 @@ public class CassandraConnector {
         try{
 
             final KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
+            kmf.init(null, null);
 
             final TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+            tmf.init((KeyStore) null);
 
             sc = SSLContext.getInstance("TLSv1.2");
             sc.init(kmf.getKeyManagers(), tmf.getTrustManagers(), null);
